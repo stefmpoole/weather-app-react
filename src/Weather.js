@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import { SearchHeartFill } from "react-bootstrap-icons";
 import Form from "react-bootstrap/Form";
 import "./Weather.css";
+import CurrentWeather from "./CurrentWeather.js";
 import axios from "axios";
 
 export default function Weather() {
@@ -59,6 +60,7 @@ export default function Weather() {
             </Button>
           </div>
         </div>
+        <CurrentWeather />
       </Form.Group>
     </Form>
   );
@@ -93,17 +95,91 @@ export default function Weather() {
                 </Button>
               </div>
             </div>
+            <Card
+              style={{
+                backgroundColor: "gray",
+                padding: 2,
+              }}
+            >
+              <div
+                className="current-weather"
+                style={{ display: "block", padding: 20 }}
+              >
+                <h2 id="currently">Currently</h2>
+                <div className="CurrentWeather">
+                  <p className="h3 text-center" id="current-time"></p>
+                  <hr />
+                  <Row className="row">
+                    <Col className="col-4">
+                      <div className="weather-icon ml-4" id="current-png"></div>
+                    </Col>
+                    <Col className="col-8 text-right mt-0 pt-0">
+                      <div className="card-body pb-0">
+                        <div className="current-temp">
+                          <span
+                            className="temperature mb-1 ml-2"
+                            id="current-temp"
+                          ></span>
+                          <span className="degrees">
+                            <button
+                              type="button"
+                              className="btn ml-0 mr-0 pl-0 pr-0"
+                              id="far"
+                            >
+                              °F
+                            </button>
+                            <span
+                              className="text-center"
+                              id="degree-separation"
+                            >
+                              {" "}
+                              |{" "}
+                            </span>
+                            <button
+                              variant="secondary"
+                              type="button"
+                              className="btn ml-0 mr-0 pl-0 pr-0"
+                              id="cel"
+                            >
+                              °C
+                            </button>
+                          </span>
+                        </div>
+                      </div>
+                      <div className="col">
+                        <div className="card-body pt-0 pb-4 mt-0 text-right">
+                          <div className="card-text" id="descrip">
+                            <small className="text-white">Description:</small>
+                          </div>
+                          <div className="card-text" id="feels">
+                            <small className="text-white">Feels like:</small>
+                          </div>
+                          <div className="card-text" id="humidity">
+                            <small className="text-white">Humidity:</small>
+                          </div>
+                          <div className="card-text" id="wind">
+                            <small className="text-white">
+                              Wind:{weather.wind}mph
+                            </small>
+                          </div>
+                        </div>
+                      </div>
+                    </Col>
+                  </Row>
+                </div>
+              </div>
+            </Card>
+            <ul>
+              <li>Temperature: {Math.round(weather.temperature)}°F</li>
+              <li>Description: {weather.description}</li>
+              <li>Humidity: {weather.humidity}%</li>
+              <li>Wind: {weather.wind}mph</li>
+            </ul>
+            <div className="image">
+              <img src={weather.icon} alt={weather.description} />
+            </div>
           </Form.Group>
         </Form>
-        <ul>
-          <li>Temperature: {Math.round(weather.temperature)}°F</li>
-          <li>Description: {weather.description}</li>
-          <li>Humidity: {weather.humidity}%</li>
-          <li>Wind: {weather.wind}mph</li>
-        </ul>
-        <div className="image">
-          <img src={weather.icon} alt={weather.description} />
-        </div>
       </div>
     );
   } else {
