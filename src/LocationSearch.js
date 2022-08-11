@@ -1,7 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import CheckBox from "./CheckBox";
-import ButtonForm from "./ButtonForm";
+import Weather from "./Weather";
 import Col from "react-bootstrap/Col";
 import "./LocationSearch.css";
 
@@ -31,7 +31,7 @@ export default function LocationSearch() {
           <Col className="col-12 pt-4 text-center">
             <p className="h3" id="h3"></p>
           </Col>
-          <ButtonForm />
+          <Weather />
           <CheckBox />
         </overlayView>
       </div>
