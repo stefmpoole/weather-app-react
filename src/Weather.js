@@ -4,7 +4,9 @@ import Button from "react-bootstrap/Button";
 import { SearchHeartFill } from "react-bootstrap-icons";
 import Form from "react-bootstrap/Form";
 import "./Weather.css";
-import CurrentWeather from "./CurrentWeather.js";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Card from "react-bootstrap/Card";
 import axios from "axios";
 
 export default function Weather() {
@@ -60,7 +62,6 @@ export default function Weather() {
             </Button>
           </div>
         </div>
-        <CurrentWeather />
       </Form.Group>
     </Form>
   );
@@ -95,10 +96,17 @@ export default function Weather() {
                 </Button>
               </div>
             </div>
+          </Form.Group>
+        </Form>
+        <Row>
+          <Col>
             <Card
+              className="pt-3 ml-2 mr-2 mt-3"
               style={{
-                backgroundColor: "gray",
-                padding: 2,
+                display: "inline-flex",
+                background: "gray",
+                padding: 5,
+                width: 560,
               }}
             >
               <div
@@ -111,7 +119,9 @@ export default function Weather() {
                   <hr />
                   <Row className="row">
                     <Col className="col-4">
-                      <div className="weather-icon ml-4" id="current-png"></div>
+                      <div className="weather-icon ml-4" id="current-png">
+                        <img src={weather.icon} alt={weather.description} />
+                      </div>
                     </Col>
                     <Col className="col-8 text-right mt-0 pt-0">
                       <div className="card-body pb-0">
@@ -119,7 +129,9 @@ export default function Weather() {
                           <span
                             className="temperature mb-1 ml-2"
                             id="current-temp"
-                          ></span>
+                          >
+                            {Math.round(weather.temperature)}
+                          </span>
                           <span className="degrees">
                             <button
                               type="button"
@@ -149,13 +161,17 @@ export default function Weather() {
                       <div className="col">
                         <div className="card-body pt-0 pb-4 mt-0 text-right">
                           <div className="card-text" id="descrip">
-                            <small className="text-white">Description:</small>
+                            <small className="text-white">
+                              Description:{weather.description}
+                            </small>
                           </div>
                           <div className="card-text" id="feels">
                             <small className="text-white">Feels like:</small>
                           </div>
                           <div className="card-text" id="humidity">
-                            <small className="text-white">Humidity:</small>
+                            <small className="text-white">
+                              Humidity:{weather.humidity}%
+                            </small>
                           </div>
                           <div className="card-text" id="wind">
                             <small className="text-white">
@@ -169,17 +185,8 @@ export default function Weather() {
                 </div>
               </div>
             </Card>
-            <ul>
-              <li>Temperature: {Math.round(weather.temperature)}°F</li>
-              <li>Description: {weather.description}</li>
-              <li>Humidity: {weather.humidity}%</li>
-              <li>Wind: {weather.wind}mph</li>
-            </ul>
-            <div className="image">
-              <img src={weather.icon} alt={weather.description} />
-            </div>
-          </Form.Group>
-        </Form>
+          </Col>
+        </Row>
       </div>
     );
   } else {

@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 import LocationSearch from "./LocationSearch.js";
-import CurrentWeather from "./CurrentWeather.js";
+
 import Footer from "./Footer.js";
 
 function App() {
@@ -31,21 +31,6 @@ function App() {
         </div>
       </Card>
       <LocationSearch />
-
-      <Card
-        style={{
-          backgroundColor: "gray",
-          padding: 2,
-        }}
-      >
-        <div
-          className="current-weather"
-          style={{ display: "block", padding: 20 }}
-        >
-          <h2 id="currently">Currently</h2>
-          <CurrentWeather />
-        </div>
-      </Card>
       <Footer />
     </Container>
   );
