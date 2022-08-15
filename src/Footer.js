@@ -16,7 +16,7 @@ export default function Footer() {
       <Row className="row mt-2">
         <Col className="col-12">
           <a
-            href="https://https://github.com/stefmpoole/weather-app-react.git"
+            href="https://github.com/stefmpoole/weather-app-react.git"
             id="open-source-link"
           >
             Open-source code

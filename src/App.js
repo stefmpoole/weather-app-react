@@ -9,30 +9,32 @@ import Footer from "./Footer.js";
 
 function App() {
   return (
-    <Container
-      style={{
-        backgroundColor: "black",
-        padding: 20,
-        width: 600,
-      }}
-    >
-      <Card
-        id="location-card"
+    <div className="App">
+      <Container
         style={{
-          backgroundColor: "grey",
-          padding: 2,
+          backgroundColor: "black",
+          padding: 20,
+          width: 600,
         }}
       >
-        <div className="forecast-heading" style={{ display: "block" }}>
-          <h1>
-            <strong>The Umbrella Forecast</strong>
-          </h1>
-          <h3>A 5-Day Weather Report</h3>
-        </div>
-      </Card>
-      <LocationSearch />
-      <Footer />
-    </Container>
+        <Card
+          id="location-card"
+          style={{
+            backgroundColor: "grey",
+            padding: 2,
+          }}
+        >
+          <div className="forecast-heading" style={{ display: "block" }}>
+            <h1>
+              <strong>The Umbrella Forecast</strong>
+            </h1>
+            <h3>A 5-Day Weather Report</h3>
+          </div>
+        </Card>
+        <LocationSearch />
+        <Footer />
+      </Container>
+    </div>
   );
 }
 
