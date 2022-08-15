@@ -18,7 +18,7 @@ function App() {
         <Card
           id="location-card"
           style={{
-            backgroundColor: "grey",
+            backgroundColor: "white",
             padding: 2,
           }}
         >

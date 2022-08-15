@@ -1,6 +1,5 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import CheckBox from "./CheckBox";
 import Weather from "./Weather";
 import Col from "react-bootstrap/Col";
 import "./LocationSearch.css";
@@ -23,7 +22,6 @@ export default function LocationSearch() {
             color: "white",
             height: 365,
             width: 552,
-            position: "absolute",
             backgroundColor: "rgba(2, 1, 0, 0.1)",
             backgroundSize: "contain",
           }}
@@ -32,7 +30,6 @@ export default function LocationSearch() {
             <p className="h3" id="h3"></p>
           </Col>
           <Weather />
-          <CheckBox />
         </overlayView>
       </div>
     </div>

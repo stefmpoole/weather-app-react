@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import CheckBox from "./CheckBox";
 import "bootstrap/dist/css/bootstrap.css";
 import Button from "react-bootstrap/Button";
 import { SearchHeartFill } from "react-bootstrap-icons";
@@ -7,6 +8,7 @@ import "./Weather.css";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card";
+import Container from "react-bootstrap/Container";
 import axios from "axios";
 
 export default function Weather() {
@@ -63,6 +65,7 @@ export default function Weather() {
           </div>
         </div>
       </Form.Group>
+      <CheckBox />
     </Form>
   );
   if (weather !== null) {
@@ -98,95 +101,93 @@ export default function Weather() {
             </div>
           </Form.Group>
         </Form>
-        <Row>
-          <Col>
-            <Card
-              className="pt-3 ml-2 mr-2 mt-3"
-              style={{
-                display: "inline-flex",
-                background: "gray",
-                padding: 5,
-                width: 560,
-              }}
+        <Container
+          className="mt-3"
+          style={{
+            padding: 0,
+            display: "inline-flex",
+          }}
+        >
+          <Card
+            className="pt-3 ml-2 mr-2 mt-3"
+            style={{
+              background: "black",
+              width: 600,
+            }}
+          >
+            <div
+              className="current-weather"
+              style={{ display: "block", padding: 10 }}
             >
-              <div
-                className="current-weather"
-                style={{ display: "block", padding: 20 }}
-              >
-                <h2 id="currently">Currently</h2>
-                <div className="CurrentWeather">
-                  <p className="h3 text-center" id="current-time"></p>
-                  <hr />
-                  <Row className="row">
-                    <Col className="col-4">
-                      <div className="weather-icon ml-4" id="current-png">
-                        <img src={weather.icon} alt={weather.description} />
-                      </div>
-                    </Col>
-                    <Col className="col-8 text-right mt-0 pt-0">
-                      <div className="card-body pb-0">
-                        <div className="current-temp">
-                          <span
-                            className="temperature mb-1 ml-2"
-                            id="current-temp"
+              <h2 id="currently">Currently</h2>
+              <div className="CurrentWeather">
+                <p className="h3 text-center" id="current-time"></p>
+                <hr className="text-white mt-4" />
+                <Row className="row text-center">
+                  <Col className="col-4">
+                    <div className="weather-icon ml-4" id="current-png">
+                      <img src={weather.icon} alt={weather.description} />
+                    </div>
+                  </Col>
+                  <Col className="col-8 text-right mt-0 pt-0">
+                    <div className="card-body pb-0">
+                      <div className="current-temp">
+                        <span
+                          className="temperature mb-1 text-white"
+                          id="current-temp"
+                        >
+                          {Math.round(weather.temperature)}
+                        </span>
+                        <span className="degrees">
+                          <button
+                            type="button"
+                            className="btn ml-0 mr-0 pl-0 pr-0 text-white"
+                            id="far"
                           >
-                            {Math.round(weather.temperature)}
+                            °F
+                          </button>
+                          <span
+                            className="text-center text-white"
+                            id="degree-separation"
+                          >
+                            |
                           </span>
-                          <span className="degrees">
-                            <button
-                              type="button"
-                              className="btn ml-0 mr-0 pl-0 pr-0"
-                              id="far"
-                            >
-                              °F
-                            </button>
-                            <span
-                              className="text-center"
-                              id="degree-separation"
-                            >
-                              {" "}
-                              |{" "}
-                            </span>
-                            <button
-                              variant="secondary"
-                              type="button"
-                              className="btn ml-0 mr-0 pl-0 pr-0"
-                              id="cel"
-                            >
-                              °C
-                            </button>
-                          </span>
+                          <button
+                            variant="secondary"
+                            type="button"
+                            className="btn ml-0 mr-0 pl-0 pr-0"
+                            id="cel"
+                          >
+                            °C
+                          </button>
+                        </span>
+                      </div>
+                    </div>
+                    <div className="col">
+                      <div className="card-body pt-0 pb-4 mt-0 text-right">
+                        <div className="card-text" id="descrip">
+                          <small className="text-white">
+                            {weather.description}
+                          </small>
+                        </div>
+                        <div className="card-text" id="humidity">
+                          <small className="text-white">
+                            Humidity: {weather.humidity}%
+                          </small>
+                        </div>
+                        <div className="card-text" id="wind">
+                          <small className="text-white">
+                            Wind: {weather.wind} mph
+                          </small>
                         </div>
                       </div>
-                      <div className="col">
-                        <div className="card-body pt-0 pb-4 mt-0 text-right">
-                          <div className="card-text" id="descrip">
-                            <small className="text-white">
-                              Description:{weather.description}
-                            </small>
-                          </div>
-                          <div className="card-text" id="feels">
-                            <small className="text-white">Feels like:</small>
-                          </div>
-                          <div className="card-text" id="humidity">
-                            <small className="text-white">
-                              Humidity:{weather.humidity}%
-                            </small>
-                          </div>
-                          <div className="card-text" id="wind">
-                            <small className="text-white">
-                              Wind:{weather.wind}mph
-                            </small>
-                          </div>
-                        </div>
-                      </div>
-                    </Col>
-                  </Row>
-                </div>
+                    </div>
+                  </Col>
+                </Row>
               </div>
-            </Card>
-          </Col>
-        </Row>
+            </div>
+          </Card>
+        </Container>
       </div>
     );
   } else {
