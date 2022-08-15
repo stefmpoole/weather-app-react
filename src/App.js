@@ -1,10 +1,8 @@
 import React from "react";
 import "./App.css";
-import "bootstrap/dist/css/bootstrap.css";
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 import LocationSearch from "./LocationSearch.js";
-
 import Footer from "./Footer.js";
 
 function App() {
