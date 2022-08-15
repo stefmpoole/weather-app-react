@@ -1,15 +1,15 @@
-Container {
+.App Container {
   text-align: center;
 }
 
-h1 {
+.App h1 {
   font-family: "Poppins", sans-serif;
   font-size: 40px;
   text-align: center;
   color: #ffc107;
 }
 
-h3 {
+.App h3 {
   font-family: "Poppins", sans-serif;
   font-size: 25px;
   font-weight: 400;
@@ -17,17 +17,23 @@ h3 {
   color: black;
 }
 
-#current-time {
+.App #current-time {
   font-size: 15px;
   display: inline;
   color: white;
 }
 
-#currently {
+.App #currently {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 30px;
   line-height: 3px;
   color: #ffc107;
   text-align: center;
+}
+
+#img {
+  display: block;
+  margin: 0 auto;
+  height: 400;
 }
