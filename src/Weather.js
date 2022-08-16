@@ -13,7 +13,7 @@ import axios from "axios";
 
 export default function Weather() {
   const [ready, setReady] = useState(false);
-  const [weather, setWeather] = useState(null);
+  const [weather, setWeather] = useState(false);
   const [city, setCity] = useState("");
 
   function getResponse(event) {
@@ -25,54 +25,57 @@ export default function Weather() {
   function handleSubmit(event) {
     event.preventDefault();
     setCity(event.target.value);
-    setReady(true);
   }
 
   function handleResponse(response) {
+    setWeather(true);
     setWeather({
-      temperature: response.data.main.temp,
+      temperature: Math.round(response.data.main.temp),
       description: response.data.weather[0].description,
-      humidity: response.data.main.humidity,
-      wind: response.data.wind.speed,
+      humidity: Math.round(response.data.main.humidity),
+      wind: Math.round(response.data.wind.speed),
       city: response.data.name,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@4x.png`,
     });
+    setReady(true);
     console.log(response.data);
   }
 
-  let form = (
-    <Form onSubmit={getResponse}>
-      {ready}
-      <Form.Group className="form-outline pt-1 ml-2 mr-2" id="location-form">
-        <div className="input-group pt-2">
-          <input
-            type="search"
-            className="form-control rounded"
-            placeholder="Enter City"
-            aria-label="Enter City"
-            aria-describedby="basic-addon2"
-            autocomplete="off"
-            autofocus="on"
-            id="search-text-input"
-            onChange={handleSubmit}
-          />
-          <div className="input-group-append">
-            <Button
-              variant="danger"
-              type="Submit"
-              id="search-button"
-              value="search"
+  if (weather.ready) {
+    let form = (
+      <Form onSubmit={getResponse}>
+        <Form.Group className="form-outline pt-1 ml-2 mr-2" id="location-form">
+          <div className="input-group pt-2">
+            {ready}
+            <input
+              type="search"
+              className="form-control rounded"
+              placeholder="Enter City"
+              aria-label="Enter City"
+              aria-describedby="basic-addon2"
+              autocomplete="off"
+              autofocus="on"
+              id="search-text-input"
               onChange={handleSubmit}
-            >
-              <UmbrellaFill />
-            </Button>
+            />
+            <div className="input-group-append">
+              <Button
+                variant="danger"
+                type="Submit"
+                id="search-button"
+                value="search"
+                onChange={handleSubmit}
+              >
+                <UmbrellaFill />
+              </Button>
+            </div>
           </div>
-        </div>
-      </Form.Group>
-      <CheckBox />
-    </Form>
-  );
-  if (weather !== null) {
+        </Form.Group>
+        <CheckBox />
+      </Form>
+    );
+    return <div>{form}</div>;
+  } else {
     return (
       <div className="weatherDescription">
         <Form onSubmit={getResponse}>
@@ -120,7 +123,7 @@ export default function Weather() {
             }}
           >
             <div className="current-weather mt-0 pt-0 text-white">
-              <h2 id="currently">{city} Currently</h2>
+              <h2 id="currently">{weather.city} Currently</h2>
               <div className="CurrentWeather">
                 <hr className="text-white mt-4 mb-0" />
                 <Row className="mt-0">
@@ -132,9 +135,7 @@ export default function Weather() {
                   <Col className="col-6 text-left mr-2">
                     <div className="card-body pb-0">
                       <div className="current-temp">
-                        <span id="current-temp">
-                          {Math.round(weather.temperature)}
-                        </span>
+                        <span id="current-temp">{weather.temperature}</span>
                         <span className="degrees">
                           <button
                             type="button"
@@ -184,7 +185,5 @@ export default function Weather() {
         </Container>
       </div>
     );
-  } else {
-    return <div>{form}</div>;
   }
 }
