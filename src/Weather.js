@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import CheckBox from "./CheckBox";
 import "bootstrap/dist/css/bootstrap.css";
 import Button from "react-bootstrap/Button";
-import { SearchHeartFill } from "react-bootstrap-icons";
+import { UmbrellaFill } from "react-bootstrap-icons";
 import Form from "react-bootstrap/Form";
 import "./Weather.css";
 import Col from "react-bootstrap/Col";
@@ -33,7 +33,7 @@ export default function Weather() {
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
       city: response.data.name,
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@4x.png`,
     });
     console.log(response.data);
   }
@@ -44,7 +44,7 @@ export default function Weather() {
         <div className="input-group pt-2">
           <input
             type="search"
-            className="form-control"
+            className="form-control rounded"
             placeholder="Enter City"
             aria-label="Enter City"
             aria-describedby="basic-addon2"
@@ -55,12 +55,13 @@ export default function Weather() {
           />
           <div className="input-group-append">
             <Button
-              variant="warning"
+              variant="danger"
               type="Submit"
               id="search-button"
               value="search"
+              onChange={handleSubmit}
             >
-              <SearchHeartFill />
+              <UmbrellaFill />
             </Button>
           </div>
         </div>
@@ -79,7 +80,7 @@ export default function Weather() {
             <div className="input-group pt-2">
               <input
                 type="search"
-                className="form-control"
+                className="form-control rounded"
                 placeholder="Enter City"
                 aria-label="Enter City"
                 aria-describedby="basic-addon2"
@@ -90,12 +91,13 @@ export default function Weather() {
               />
               <div className="input-group-append">
                 <Button
-                  variant="warning"
+                  variant="danger"
                   type="Submit"
                   id="search-button"
                   value="search"
+                  onChange={handleSubmit}
                 >
-                  <SearchHeartFill />
+                  <UmbrellaFill />
                 </Button>
               </div>
             </div>
@@ -109,33 +111,28 @@ export default function Weather() {
           }}
         >
           <Card
-            className="pt-3 ml-2 mr-2 mt-3"
+            className="pt-4 pb-2 ml-2 mr-2"
             style={{
               background: "black",
               width: 600,
             }}
           >
-            <div
-              className="current-weather"
-              style={{ display: "block", padding: 10 }}
-            >
-              <h2 id="currently">Currently</h2>
+            <div className="current-weather mt-0 pt-0 text-white">
+              <h2 id="currently" onChange={handleSubmit}>
+                Currently in {city}
+              </h2>
               <div className="CurrentWeather">
-                <p className="h3 text-center" id="current-time"></p>
-                <hr className="text-white mt-4" />
-                <Row className="row text-center">
-                  <Col className="col-4">
-                    <div className="weather-icon ml-4" id="current-png">
+                <hr className="text-white mt-4 mb-0" />
+                <Row className="mt-0">
+                  <Col className="col-6 ml-3">
+                    <div className="weather-icon" id="current-png">
                       <img src={weather.icon} alt={weather.description} />
                     </div>
                   </Col>
-                  <Col className="col-8 text-right mt-0 pt-0">
+                  <Col className="col-6 text-left mr-2">
                     <div className="card-body pb-0">
                       <div className="current-temp">
-                        <span
-                          className="temperature mb-1 text-white"
-                          id="current-temp"
-                        >
+                        <span id="current-temp">
                           {Math.round(weather.temperature)}
                         </span>
                         <span className="degrees">
@@ -146,10 +143,7 @@ export default function Weather() {
                           >
                             °F
                           </button>
-                          <span
-                            className="text-center text-white"
-                            id="degree-separation"
-                          >
+                          <span className="text-white" id="degree-separation">
                             |
                           </span>
                           <button
@@ -164,7 +158,7 @@ export default function Weather() {
                       </div>
                     </div>
                     <div className="col">
-                      <div className="card-body pt-0 pb-4 mt-0 text-right">
+                      <div className="card-body pt-0 mt-0 text-right">
                         <div className="card-text" id="descrip">
                           <small className="text-white">
                             {weather.description}

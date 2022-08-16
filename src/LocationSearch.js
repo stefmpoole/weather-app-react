@@ -7,9 +7,6 @@ import "./LocationSearch.css";
 export default function LocationSearch() {
   return (
     <div className="location-search" style={{ paddingTop: 5 }}>
-      <Col className="col-12 text-center">
-        <p className="h3" id="h3"></p>
-      </Col>
       <Weather />
     </div>
   );

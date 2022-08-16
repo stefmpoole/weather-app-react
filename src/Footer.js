@@ -19,7 +19,7 @@ export default function Footer() {
           <a
             href="https://github.com/stefmpoole/weather-app-react.git"
             target="_blank"
-            style={{ color: "#ffc107" }}
+            style={{ color: "#f7e129" }}
           >
             Open-source code
           </a>

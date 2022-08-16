@@ -20,7 +20,7 @@ function App() {
           id="location-card"
           style={{
             backgroundColor: "white",
-            padding: 2,
+            padding: 3,
           }}
         >
           <Row>
@@ -34,6 +34,7 @@ function App() {
                   backgroundRepeat: "no-repeat",
                   backgroundSize: "cover",
                   height: "20vh",
+                  margin: 3,
                 }}
               />
             </div>

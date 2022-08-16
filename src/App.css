@@ -6,7 +6,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 40px;
   text-align: center;
-  color: #ffc107;
+  color: black;
 }
 
 .App h3 {
@@ -17,23 +17,11 @@
   color: black;
 }
 
-.App #current-time {
-  font-size: 15px;
-  display: inline;
-  color: white;
-}
-
 .App #currently {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 30px;
   line-height: 3px;
-  color: #ffc107;
+  color: #f7e129;
   text-align: center;
-}
-
-#img {
-  display: block;
-  margin: 0 auto;
-  height: 400;
 }
