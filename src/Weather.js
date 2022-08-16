@@ -12,6 +12,7 @@ import Container from "react-bootstrap/Container";
 import axios from "axios";
 
 export default function Weather() {
+  const [ready, setReady] = useState(false);
   const [weather, setWeather] = useState(null);
   const [city, setCity] = useState("");
 
@@ -24,6 +25,7 @@ export default function Weather() {
   function handleSubmit(event) {
     event.preventDefault();
     setCity(event.target.value);
+    setReady(true);
   }
 
   function handleResponse(response) {
@@ -40,6 +42,7 @@ export default function Weather() {
 
   let form = (
     <Form onSubmit={getResponse}>
+      {ready}
       <Form.Group className="form-outline pt-1 ml-2 mr-2" id="location-form">
         <div className="input-group pt-2">
           <input
@@ -97,7 +100,6 @@ export default function Weather() {
                   value="search"
                 >
                   <UmbrellaFill />
-                  <p>Search</p>
                 </Button>
               </div>
             </div>
