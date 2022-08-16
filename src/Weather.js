@@ -97,6 +97,7 @@ export default function Weather() {
                   value="search"
                 >
                   <UmbrellaFill />
+                  <p>Search</p>
                 </Button>
               </div>
             </div>
