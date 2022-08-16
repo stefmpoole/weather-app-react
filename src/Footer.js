@@ -2,6 +2,7 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import "./Footer.css";
 
 export default function Footer() {
   return (
@@ -17,7 +18,8 @@ export default function Footer() {
         <Col className="col-12">
           <a
             href="https://github.com/stefmpoole/weather-app-react.git"
-            id="open-source-link"
+            target="_blank"
+            style={{ color: "#ffc107" }}
           >
             Open-source code
           </a>
