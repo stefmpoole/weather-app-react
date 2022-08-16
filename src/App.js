@@ -12,7 +12,7 @@ function App() {
       <Container
         style={{
           backgroundColor: "black",
-          padding: 20,
+          paddingTop: 20,
           width: 600,
         }}
       >

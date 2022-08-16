@@ -14,16 +14,18 @@ export default function Footer() {
         color: "white",
       }}
     >
-      <Row className="row mt-2">
+      <Row className="row mt-2 mb-0 pb-0 text-center">
         <Col className="col-12">
-          <a
-            href="https://github.com/stefmpoole/weather-app-react.git"
-            target="_blank"
-            style={{ color: "#f7e129" }}
-          >
-            Open-source code
-          </a>
-          <span> by Stefanie Poole </span>
+          <small>
+            <a
+              href="https://github.com/stefmpoole/weather-app-react.git"
+              target="_blank"
+              style={{ color: "#f7e129" }}
+            >
+              Open-source code
+            </a>
+            <span> by Stefanie Poole </span>
+          </small>
         </Col>
       </Row>
     </Container>

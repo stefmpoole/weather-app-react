@@ -95,7 +95,6 @@ export default function Weather() {
                   type="Submit"
                   id="search-button"
                   value="search"
-                  onChange={handleSubmit}
                 >
                   <UmbrellaFill />
                 </Button>
@@ -118,9 +117,7 @@ export default function Weather() {
             }}
           >
             <div className="current-weather mt-0 pt-0 text-white">
-              <h2 id="currently" onChange={handleSubmit}>
-                Currently in {city}
-              </h2>
+              <h2 id="currently">{city} Currently</h2>
               <div className="CurrentWeather">
                 <hr className="text-white mt-4 mb-0" />
                 <Row className="mt-0">
