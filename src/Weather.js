@@ -126,10 +126,13 @@ export default function Weather() {
             }}
           >
             <div className="current-weather mt-0 pt-0 text-white">
-              <h2 id="currently">{weather.city} Currently</h2>
-              <h3>
-                <FormattedDate date={weather.date} />
-              </h3>
+              <div id="currently">
+                <h4>{weather.city}</h4>
+                <h5>
+                  <FormattedDate date={weather.date} />
+                </h5>
+              </div>
+              <h2 className="text-center pt-3 pb-0">Currently</h2>
               <div className="CurrentWeather">
                 <hr className="text-white mt-4 mb-0" />
                 <Row className="mt-0">

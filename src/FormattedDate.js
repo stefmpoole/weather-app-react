@@ -30,7 +30,7 @@ export default function FormattedDate(props) {
 
   return (
     <div>
-      <h5 className="text-white pt-4">{date}</h5>
+      <h5 className="text-white">{date}</h5>
     </div>
   );
 }
