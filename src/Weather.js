@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 import { UmbrellaFill } from "react-bootstrap-icons";
 import Form from "react-bootstrap/Form";
 import "./Weather.css";
+import FormattedDate from "./FormattedDate";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card";
@@ -35,10 +36,12 @@ export default function Weather() {
       humidity: Math.round(response.data.main.humidity),
       wind: Math.round(response.data.wind.speed),
       city: response.data.name,
+      date: response.data.dt,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@4x.png`,
     });
     setReady(true);
     console.log(response.data);
+    console.log(response.data.dt);
   }
 
   if (weather.ready) {
@@ -53,8 +56,8 @@ export default function Weather() {
               placeholder="Enter City"
               aria-label="Enter City"
               aria-describedby="basic-addon2"
-              autocomplete="off"
-              autofocus="on"
+              autoComplete="off"
+              autoFocus="on"
               id="search-text-input"
               onChange={handleSubmit}
             />
@@ -90,8 +93,8 @@ export default function Weather() {
                 placeholder="Enter City"
                 aria-label="Enter City"
                 aria-describedby="basic-addon2"
-                autocomplete="off"
-                autofocus="on"
+                autoComplete="off"
+                autoFocus="on"
                 id="search-text-input"
                 onChange={handleSubmit}
               />
@@ -124,6 +127,9 @@ export default function Weather() {
           >
             <div className="current-weather mt-0 pt-0 text-white">
               <h2 id="currently">{weather.city} Currently</h2>
+              <h3>
+                <FormattedDate date={weather.date} />
+              </h3>
               <div className="CurrentWeather">
                 <hr className="text-white mt-4 mb-0" />
                 <Row className="mt-0">
