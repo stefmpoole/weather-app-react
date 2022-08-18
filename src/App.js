@@ -3,7 +3,7 @@ import "./App.css";
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
-import LocationSearch from "./LocationSearch.js";
+import Weather from "./Weather";
 import Footer from "./Footer.js";
 
 function App() {
@@ -48,7 +48,7 @@ function App() {
             </div>
           </Row>
         </Card>
-        <LocationSearch />
+        <Weather defaultCity="Paris" />
         <Footer />
       </Container>
     </div>

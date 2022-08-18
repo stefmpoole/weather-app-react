@@ -24,9 +24,6 @@ export default function FormattedDate(props) {
   }
 
   let date = `${weekday} ${month}/${day} ${hours}:${minutes}`;
-  console.log(props.date);
-  console.log(current);
-  console.log(date);
 
   return (
     <div>
