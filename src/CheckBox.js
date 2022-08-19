@@ -7,15 +7,18 @@ import "./CheckBox.css";
 
 export default function CheckBox() {
   return (
-    <Form>
+    <div className="CheckBox">
       <Row>
         <Col className="col-9 mt-2">
-          <input id="checkbox" type="radio" />
-          <label id="checkbox-label" for="checkbox">
-            Search My Current Location
-          </label>
+          <Form.Group className="mb-3" id="formBasicCheckbox">
+            <Form.Check
+              className="text-white"
+              type="radio"
+              label="Search My Current Location"
+            />
+          </Form.Group>
         </Col>
       </Row>
-    </Form>
+    </div>
   );
 }

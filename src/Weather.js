@@ -8,14 +8,18 @@ import "./Weather.css";
 import WeatherData from "./WeatherData";
 import axios from "axios";
 
-export default function Weather() {
+export default function Weather(props) {
   const [weather, setWeather] = useState(false);
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState();
 
-  function getResponse(event) {
-    event.preventDefault();
+  function getResponse() {
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=671bc037fdf9b66e2a2a9caaec161f09&units=imperial`;
     axios.get(apiUrl).then(handleResponse);
+  }
+
+  function search(event) {
+    event.preventDefault();
+    getResponse();
   }
 
   function handleSubmit(event) {
@@ -36,12 +40,10 @@ export default function Weather() {
     });
   }
 
-  if (weather !== false) {
-    return <WeatherData data={weather} />;
-  } else {
+  if (weather === false) {
     let submitForm = (
       <div className="submitForm">
-        <Form onSubmit={getResponse}>
+        <Form onSubmit={search}>
           <Form.Group
             className="form-outline pt-1 ml-2 mr-2"
             id="location-form"
@@ -76,5 +78,7 @@ export default function Weather() {
       </div>
     );
     return <div>{submitForm}</div>;
+  } else {
   }
+  return <WeatherData data={weather} />;
 }
