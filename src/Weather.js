@@ -8,12 +8,12 @@ import "./Weather.css";
 import WeatherData from "./WeatherData";
 import axios from "axios";
 
-export default function Weather(props) {
+export default function Weather() {
   const [weather, setWeather] = useState(false);
-  const [city, setCity] = useState();
+  const [city, setCity] = useState(null);
 
   function getResponse() {
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=671bc037fdf9b66e2a2a9caaec161f09&units=imperial`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=97c9febfd90b94ec808e8edbe99272c3&units=imperial`;
     axios.get(apiUrl).then(handleResponse);
   }
 
@@ -79,6 +79,6 @@ export default function Weather(props) {
     );
     return <div>{submitForm}</div>;
   } else {
+    return <WeatherData data={weather} />;
   }
-  return <WeatherData data={weather} />;
 }

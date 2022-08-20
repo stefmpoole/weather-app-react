@@ -4,6 +4,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
+import CurrentTemp from "./CurrentTemp";
 
 export default function WeatherData(props) {
   return (
@@ -39,29 +40,7 @@ export default function WeatherData(props) {
               </Col>
               <Col className="col-6 text-left mr-2">
                 <div className="card-body pb-0">
-                  <div className="current-temp">
-                    <span id="current-temp">{props.data.temperature}</span>
-                    <span className="degrees">
-                      <button
-                        type="button"
-                        className="btn ml-0 mr-0 pl-0 pr-0 text-white"
-                        id="far"
-                      >
-                        °F
-                      </button>
-                      <span className="text-white" id="degree-separation">
-                        |
-                      </span>
-                      <button
-                        variant="secondary"
-                        type="button"
-                        className="btn ml-0 mr-0 pl-0 pr-0"
-                        id="cel"
-                      >
-                        °C
-                      </button>
-                    </span>
-                  </div>
+                  <CurrentTemp farhenheit={props.data.temperature} />
                 </div>
                 <div className="col">
                   <div className="card-body pt-0 mt-0 text-right">

@@ -1,10 +1,10 @@
 import React from "react";
 import "./App.css";
 import Container from "react-bootstrap/Container";
-import Card from "react-bootstrap/Card";
-import Row from "react-bootstrap/Row";
 import Weather from "./Weather";
 import Footer from "./Footer.js";
+import Card from "react-bootstrap/Card";
+import Row from "react-bootstrap/Row";
 
 function App() {
   return (
@@ -48,7 +48,7 @@ function App() {
             </div>
           </Row>
         </Card>
-        <Weather defaultCity="Paris" />
+        <Weather defaultCity="New York" />
         <Footer />
       </Container>
     </div>
