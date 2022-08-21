@@ -40,44 +40,46 @@ export default function Weather() {
     });
   }
 
-  let submitForm = (
-    <div className="submitForm">
-      <Form onSubmit={search}>
-        <Form.Group className="form-outline pt-1 ml-2 mr-2" id="location-form">
-          <div className="input-group pt-2">
-            <input
-              type="search"
-              className="form-control rounded"
-              placeholder="Enter City"
-              aria-label="Enter City"
-              aria-describedby="basic-addon2"
-              autoComplete="off"
-              autoFocus="on"
-              id="search-text-input"
-              onChange={handleSubmit}
-            />
-            <div className="input-group-append">
-              <Button
-                variant="danger"
-                type="Submit"
-                id="search-button"
-                value="search"
+  if (weather !== false) {
+    return (
+      <div className="submitForm">
+        <Form onSubmit={search}>
+          <Form.Group
+            className="form-outline pt-1 ml-2 mr-2"
+            id="location-form"
+          >
+            <div className="input-group pt-2">
+              <input
+                type="search"
+                className="form-control rounded"
+                placeholder="Enter City"
+                aria-label="Enter City"
+                aria-describedby="basic-addon2"
+                autoComplete="off"
+                autoFocus="on"
+                id="search-text-input"
                 onChange={handleSubmit}
-              >
-                <UmbrellaFill />
-              </Button>
+              />
+              <div className="input-group-append">
+                <Button
+                  variant="danger"
+                  type="Submit"
+                  id="search-button"
+                  value="search"
+                  onChange={handleSubmit}
+                >
+                  <UmbrellaFill />
+                </Button>
+              </div>
             </div>
-          </div>
-        </Form.Group>
-        <CheckBox />
-      </Form>
-      <WeatherData data={weather} />
-    </div>
-  );
-
-  if (weather === false) {
-    getResponse();
+          </Form.Group>
+          <CheckBox />
+        </Form>
+        <WeatherData data={weather} />
+      </div>
+    );
   } else {
-    return <div>{submitForm}</div>;
+    getResponse();
+    return "Loading...";
   }
 }

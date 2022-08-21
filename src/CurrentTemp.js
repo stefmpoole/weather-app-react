@@ -1,24 +1,24 @@
 import React, { useState } from "react";
-import { Button } from "react-bootstrap";
 import "./CurrentTemp.css";
+import Button from "react-bootstrap/Button";
 
 export default function CurrentTemp(props) {
-  const [unit, setUnit] = useState(false);
-  let farhenheit = props.farhenheit;
+  const [unit, setUnit] = useState("fahrenheit");
 
-  function showFarhenheit(event) {
+  function celsiusTemp(event) {
     event.preventDefault();
+    setUnit("celsius");
   }
 
-  function celsius(event) {
+  function farhenheitTemp(event) {
     event.preventDefault();
-    setUnit(true);
+    setUnit("fahrenheit");
   }
 
-  if (unit === false) {
+  if (unit === "fahrenheit") {
     return (
       <div className="current-temp">
-        <span id="current-temp">{farhenheit}</span>
+        <span id="current-temp">{props.farhenheit}</span>
         <span className="degrees">
           <Button
             className=" text-white btn ml-0 mr-0 pl-0 pr-0"
@@ -27,15 +27,13 @@ export default function CurrentTemp(props) {
           >
             °F
           </Button>
-          <span className="text-white" id="degree-separation">
-            |
-          </span>
+          |
           <Button
             variant="secondary"
             type="button"
             className="btn ml-0 mr-0 pl-0 pr-0"
             id="cel"
-            onClick={celsius}
+            onClick={celsiusTemp}
           >
             °C
           </Button>
@@ -49,23 +47,18 @@ export default function CurrentTemp(props) {
         <span id="current-temp">{Math.round(celsius)}</span>
         <span className="degrees">
           <Button
+            variant="secondary"
             type="button"
-            className=" text-white btn ml-0 mr-0 pl-0 pr-0"
+            className="btn ml-0 mr-0 pl-0 pr-0"
             id="far"
-            onClick={showFarhenheit}
+            onClick={farhenheitTemp}
           >
             °F
           </Button>
           <span className="text-white" id="degree-separation">
             |
           </span>
-          <Button
-            variant="secondary"
-            type="button"
-            className="btn ml-0 mr-0 pl-0 pr-0"
-            id="cel"
-            onClick={celsius}
-          >
+          <Button className="btn ml-0 mr-0 pl-0 pr-0" type="button" id="cel">
             °C
           </Button>
         </span>
