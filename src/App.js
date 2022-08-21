@@ -48,7 +48,7 @@ function App() {
             </div>
           </Row>
         </Card>
-        <Weather defaultCity="New York" />
+        <Weather />
         <Footer />
       </Container>
     </div>

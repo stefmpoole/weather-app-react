@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
+import "./CurrentTemp.css";
 
 export default function CurrentTemp(props) {
   const [unit, setUnit] = useState(false);
+  let farhenheit = props.farhenheit;
 
   function showFarhenheit(event) {
     event.preventDefault();
@@ -13,17 +15,15 @@ export default function CurrentTemp(props) {
     setUnit(true);
   }
 
-  console.log(props.farhenheit);
   if (unit === false) {
     return (
       <div className="current-temp">
-        <span id="current-temp">{props.farhenheit}</span>
+        <span id="current-temp">{farhenheit}</span>
         <span className="degrees">
           <Button
             className=" text-white btn ml-0 mr-0 pl-0 pr-0"
             type="button"
             id="far"
-            onClick={showFarhenheit}
           >
             °F
           </Button>
@@ -43,7 +43,7 @@ export default function CurrentTemp(props) {
       </div>
     );
   } else {
-    let celsius = (Math.round(props.farhenheit - 32) * 5) / 9;
+    let celsius = ((props.farhenheit - 32) * 5) / 9;
     return (
       <div className="current-temp">
         <span id="current-temp">{Math.round(celsius)}</span>

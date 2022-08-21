@@ -10,7 +10,7 @@ import axios from "axios";
 
 export default function Weather() {
   const [weather, setWeather] = useState(false);
-  const [city, setCity] = useState(null);
+  const [city, setCity] = useState("New York");
 
   function getResponse() {
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=97c9febfd90b94ec808e8edbe99272c3&units=imperial`;
@@ -40,45 +40,44 @@ export default function Weather() {
     });
   }
 
-  if (weather === false) {
-    let submitForm = (
-      <div className="submitForm">
-        <Form onSubmit={search}>
-          <Form.Group
-            className="form-outline pt-1 ml-2 mr-2"
-            id="location-form"
-          >
-            <div className="input-group pt-2">
-              <input
-                type="search"
-                className="form-control rounded"
-                placeholder="Enter City"
-                aria-label="Enter City"
-                aria-describedby="basic-addon2"
-                autoComplete="off"
-                autoFocus="on"
-                id="search-text-input"
+  let submitForm = (
+    <div className="submitForm">
+      <Form onSubmit={search}>
+        <Form.Group className="form-outline pt-1 ml-2 mr-2" id="location-form">
+          <div className="input-group pt-2">
+            <input
+              type="search"
+              className="form-control rounded"
+              placeholder="Enter City"
+              aria-label="Enter City"
+              aria-describedby="basic-addon2"
+              autoComplete="off"
+              autoFocus="on"
+              id="search-text-input"
+              onChange={handleSubmit}
+            />
+            <div className="input-group-append">
+              <Button
+                variant="danger"
+                type="Submit"
+                id="search-button"
+                value="search"
                 onChange={handleSubmit}
-              />
-              <div className="input-group-append">
-                <Button
-                  variant="danger"
-                  type="Submit"
-                  id="search-button"
-                  value="search"
-                  onChange={handleSubmit}
-                >
-                  <UmbrellaFill />
-                </Button>
-              </div>
+              >
+                <UmbrellaFill />
+              </Button>
             </div>
-          </Form.Group>
-          <CheckBox />
-        </Form>
-      </div>
-    );
-    return <div>{submitForm}</div>;
+          </div>
+        </Form.Group>
+        <CheckBox />
+      </Form>
+      <WeatherData data={weather} />
+    </div>
+  );
+
+  if (weather === false) {
+    getResponse();
   } else {
-    return <WeatherData data={weather} />;
+    return <div>{submitForm}</div>;
   }
 }

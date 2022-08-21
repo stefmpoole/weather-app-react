@@ -3,10 +3,6 @@ form {
   margin: 0 auto;
 }
 
-button {
-  background-color: transparent;
-}
-
 .degrees {
   position: relative;
   top: -30px;
