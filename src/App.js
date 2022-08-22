@@ -10,9 +10,10 @@ function App() {
   return (
     <div className="App">
       <Container
+        className="rounded"
         style={{
           backgroundColor: "black",
-          paddingTop: 20,
+          paddingTop: 10,
           width: 600,
         }}
       >
@@ -34,7 +35,7 @@ function App() {
                   backgroundRepeat: "no-repeat",
                   backgroundSize: "cover",
                   height: "20vh",
-                  margin: 3,
+                  margin: 4,
                 }}
               />
             </div>

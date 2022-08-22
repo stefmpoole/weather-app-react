@@ -9,29 +9,29 @@ import CurrentTemp from "./CurrentTemp";
 export default function WeatherData(props) {
   return (
     <Container
-      className="mt-3"
+      className="mt-1"
       style={{
         padding: 0,
         display: "inline-flex",
       }}
     >
       <Card
-        className="pt-4 pb-2 ml-2 mr-2"
+        className="pt-0 pb-0 ml-2 mr-2"
         style={{
           background: "black",
           width: 600,
         }}
       >
         <div className="current-weather mt-0 pt-0 text-white">
-          <div id="currently">
-            <h4>{props.data.city}</h4>
-            <h5>
-              <FormattedDate date={props.data.date} />
-            </h5>
+          <h2 className="text-center pt-1 pb-0" id="current">
+            Currently
+          </h2>
+          <div id="current-city">
+            <div>{props.data.city}</div>
+            <FormattedDate date={props.data.date} />
           </div>
-          <h2 className="text-center pt-3 pb-0">Currently</h2>
           <div className="CurrentWeather">
-            <hr className="text-white mt-4 mb-0" />
+            <hr className="text-white mt-2 mb-0" />
             <Row className="mt-0">
               <Col className="col-6 ml-3">
                 <div className="weather-icon" id="current-png">

@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import WeatherData from "./WeatherData";
+import WeatherForecast from "./WeatherForecast";
 import CheckBox from "./CheckBox";
 import "bootstrap/dist/css/bootstrap.css";
 import Button from "react-bootstrap/Button";
 import { UmbrellaFill } from "react-bootstrap-icons";
 import Form from "react-bootstrap/Form";
 import "./Weather.css";
-import WeatherData from "./WeatherData";
 import axios from "axios";
 
 export default function Weather() {
@@ -76,6 +77,7 @@ export default function Weather() {
           <CheckBox />
         </Form>
         <WeatherData data={weather} />
+        <WeatherForecast />
       </div>
     );
   } else {

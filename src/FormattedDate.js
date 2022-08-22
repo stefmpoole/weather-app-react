@@ -25,9 +25,5 @@ export default function FormattedDate(props) {
 
   let date = `${weekday} ${month}/${day} ${hours}:${minutes}`;
 
-  return (
-    <div>
-      <h5 className="text-white">{date}</h5>
-    </div>
-  );
+  return <div className="text-white">{date}</div>;
 }

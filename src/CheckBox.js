@@ -9,7 +9,7 @@ export default function CheckBox() {
   return (
     <div className="CheckBox">
       <Row>
-        <Col className="col-9 mt-2">
+        <Col className="col-9 mt-1">
           <Form.Group className="mb-3" id="formBasicCheckbox">
             <Form.Check
               className="text-white"
