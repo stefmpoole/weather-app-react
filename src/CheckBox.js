@@ -3,7 +3,6 @@ import "bootstrap/dist/css/bootstrap.css";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import "./CheckBox.css";
 
 export default function CheckBox() {
   return (
@@ -15,6 +14,7 @@ export default function CheckBox() {
               className="text-white"
               type="radio"
               label="Search My Current Location"
+              style={{ fontSize: 13 }}
             />
           </Form.Group>
         </Col>

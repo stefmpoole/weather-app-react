@@ -34,21 +34,20 @@ function App() {
                     "url('https://images.pexels.com/photos/1451040/pexels-photo-1451040.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
                   backgroundRepeat: "no-repeat",
                   backgroundSize: "cover",
-                  height: "20vh",
+                  height: "12vh",
                   margin: 4,
                 }}
               />
             </div>
           </Row>
-          <Row>
-            <div className="col-12">
-              <h1>
-                <strong>The Umbrella Forecast</strong>
-              </h1>
-              <h3>A 5-Day Weather Report</h3>
-            </div>
-          </Row>
+          <Row></Row>
         </Card>
+        <div className="col-12">
+          <h1>
+            <strong>The Umbrella Forecast</strong>
+          </h1>
+          <h3 className="text-white">A 5-Day Weather Report</h3>
+        </div>
         <Weather />
         <Footer />
       </Container>

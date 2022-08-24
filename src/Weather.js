@@ -10,6 +10,7 @@ import "./Weather.css";
 import axios from "axios";
 
 export default function Weather() {
+  let [ready, setReady] = useState(false);
   const [weather, setWeather] = useState(false);
   const [city, setCity] = useState("New York");
 
@@ -30,7 +31,9 @@ export default function Weather() {
 
   function handleResponse(response) {
     setWeather(true);
+    setReady(true);
     setWeather({
+      coords: response.data.coord,
       temperature: Math.round(response.data.main.temp),
       description: response.data.weather[0].description,
       humidity: Math.round(response.data.main.humidity),
@@ -41,7 +44,7 @@ export default function Weather() {
     });
   }
 
-  if (weather !== false) {
+  if (ready) {
     return (
       <div className="submitForm">
         <Form onSubmit={search}>
@@ -77,7 +80,7 @@ export default function Weather() {
           <CheckBox />
         </Form>
         <WeatherData data={weather} />
-        <WeatherForecast />
+        <WeatherForecast coords={weather.coords} />
       </div>
     );
   } else {
