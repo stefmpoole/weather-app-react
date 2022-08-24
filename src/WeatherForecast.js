@@ -14,17 +14,15 @@ export default function WeatherForecast(props) {
   function handleResponse(response) {
     setReady(true);
     setForecast(response.data.daily[0]);
+    console.log(response.data.daily[0]);
   }
 
   if (ready) {
-    console.log(forecast);
     return (
       <Container>
         <Row>
           <CardGroup>
-            <Card className="rounded" border="warning" style={{ margin: 2 }}>
-              <WeatherForecastDaily data={forecast} />
-            </Card>
+            <WeatherForecastDaily data={forecast} />
             <Card className="rounded" border="warning" style={{ margin: 2 }}>
               <h5 className="card-title text-center">Tue</h5>
               <img
@@ -33,9 +31,9 @@ export default function WeatherForecast(props) {
                 alt="weather-png"
               />
               <div className="card-body">
-                <div className="card-text text-center">
+                <span className="card-text text-center">
                   <strong>0°|0°</strong>
-                </div>
+                </span>
               </div>
             </Card>
             <Card className="rounded" border="warning" style={{ margin: 2 }}>
