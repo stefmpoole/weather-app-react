@@ -24,7 +24,10 @@ export default function WeatherForecast(props) {
         <Row>
           <CardGroup
             id="CardGroup"
-            style={{ margin: 1, display: "-ms-inline-flexbox" }}
+            style={{
+              display: "-webkit-inline-flex",
+              WebkitJustifyContent: "center",
+            }}
           >
             {forecast.map(function (dailyForecast, index) {
               if (index < 5) {
