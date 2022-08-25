@@ -4,7 +4,6 @@ import Row from "react-bootstrap/Row";
 import CardGroup from "react-bootstrap/CardGroup";
 import Container from "react-bootstrap/esm/Container";
 import axios from "axios";
-import "./WeatherForecast.css";
 
 export default function WeatherForecast(props) {
   let [ready, setReady] = useState(false);
@@ -24,7 +23,7 @@ export default function WeatherForecast(props) {
       <Container
         className="mt-1"
         style={{
-          width: 505,
+          maxWidth: 505,
         }}
       >
         <Row>
