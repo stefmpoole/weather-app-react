@@ -24,12 +24,17 @@ export default function WeatherForecast(props) {
       <Container
         className="mt-1"
         style={{
-          display: "-webkit-inline-flex",
-          WebkitJustifyContent: "center",
+          width: 505,
         }}
       >
         <Row>
-          <CardGroup id="CardGroup">
+          <CardGroup
+            id="CardGroup"
+            style={{
+              display: "-webkit-inline-flex",
+              WebkitJustifyContent: "center",
+            }}
+          >
             {forecast.map(function (dailyForecast, index) {
               if (index < 5) {
                 return (
