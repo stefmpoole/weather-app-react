@@ -10,28 +10,25 @@ import "./WeatherData.css";
 export default function WeatherData(props) {
   return (
     <Container
-      className="mt-2"
       style={{
-        padding: 0,
-        display: "inline-flex",
+        display: "-webkit-inline-flex",
+        WebkitJustifyContent: "center",
       }}
     >
-      <Card
-        className="pt-0 pb-0 ml-2 mr-2"
-        style={{
-          background: "black",
-          width: 600,
-        }}
-      >
-        <div className="current-weather mt-2 pt-0 text-white">
-          <div id="current-city">{props.data.city}</div>
-          <div id="current-time">
-            <FormattedDate date={props.data.date} />
-          </div>
-          <hr style={{ margin: 0 }} />
+      <div className="current-weather justify-center mt-2 pt-0">
+        <div id="current-city">{props.data.city}</div>
+        <div className="mb-1" id="current-time">
+          <FormattedDate date={props.data.date} />
+        </div>
+        <Card
+          style={{
+            backgroundColor: "rgba(8,74,136,4)",
+            width: 488,
+          }}
+        >
           <div className="CurrentWeather">
             <Row className="mt-0">
-              <Col className="col-6 ml-3">
+              <Col className="col-6">
                 <div id="current-png">
                   <img src={props.data.icon} alt={props.data.description} />
                 </div>
@@ -43,7 +40,7 @@ export default function WeatherData(props) {
                 <div className="col">
                   <div className="card-body pt-0 mt-0 text-right">
                     <div className="card-text">
-                      <small className="text-white">
+                      <small>
                         <div id="currently">
                           <p>Currently: {props.data.description}</p>
                         </div>
@@ -64,8 +61,8 @@ export default function WeatherData(props) {
               </Col>
             </Row>
           </div>
-        </div>
-      </Card>
+        </Card>
+      </div>
     </Container>
   );
 }

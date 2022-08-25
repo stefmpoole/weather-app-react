@@ -48,10 +48,7 @@ export default function Weather() {
     return (
       <div className="submitForm">
         <Form onSubmit={search}>
-          <Form.Group
-            className="form-outline pt-1 ml-2 mr-2"
-            id="location-form"
-          >
+          <Form.Group className="form-outline pt-1" id="location-form">
             <div className="input-group">
               <input
                 type="search"
@@ -66,7 +63,7 @@ export default function Weather() {
               />
               <div className="input-group-append">
                 <Button
-                  variant="danger"
+                  style={{ color: "white", backgroundColor: "#eb6e4b" }}
                   type="Submit"
                   id="search-button"
                   value="search"

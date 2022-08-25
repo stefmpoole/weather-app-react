@@ -17,7 +17,7 @@ export default function CurrentTemp(props) {
 
   if (unit === "fahrenheit") {
     return (
-      <div className="current-temp">
+      <div className="current-temp text-white">
         <span id="current-temp">{props.farhenheit}</span>
         <span className="degrees">
           <Button

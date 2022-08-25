@@ -8,7 +8,6 @@ export default function Footer() {
   return (
     <Container
       style={{
-        backgroundColor: "black",
         padding: 20,
         width: 400,
         color: "white",
@@ -21,11 +20,11 @@ export default function Footer() {
               href="https://github.com/stefmpoole/weather-app-react.git"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: "#ff2b13" }}
+              style={{ color: "#eb6e4b" }}
             >
               Open-source code
             </a>
-            <span> by Stefanie Poole </span>
+            <span className="text-black"> by Stefanie Poole </span>
           </small>
         </Col>
       </Row>
