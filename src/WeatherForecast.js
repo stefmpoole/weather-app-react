@@ -4,6 +4,7 @@ import Row from "react-bootstrap/Row";
 import CardGroup from "react-bootstrap/CardGroup";
 import Container from "react-bootstrap/esm/Container";
 import axios from "axios";
+import "./WeatherForecast.css";
 
 export default function WeatherForecast(props) {
   let [ready, setReady] = useState(false);
@@ -28,7 +29,7 @@ export default function WeatherForecast(props) {
         }}
       >
         <Row>
-          <CardGroup id="CardGroup" style={{}}>
+          <CardGroup id="CardGroup">
             {forecast.map(function (dailyForecast, index) {
               if (index < 5) {
                 return (
