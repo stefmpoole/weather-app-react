@@ -21,8 +21,9 @@ form {
 
 #currently {
   font-size: large;
-  color: white;
+  color: black;
   letter-spacing: 1px;
+  font-weight: 500;
 }
 
 #current-temp {
@@ -31,7 +32,7 @@ form {
 }
 
 #cel {
-  color: #eb6e4b;
+  color: white;
 }
 
 #humidity.card-text {

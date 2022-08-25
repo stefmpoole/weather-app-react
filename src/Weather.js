@@ -63,7 +63,11 @@ export default function Weather() {
               />
               <div className="input-group-append">
                 <Button
-                  style={{ color: "white", backgroundColor: "#eb6e4b" }}
+                  style={{
+                    color: "white",
+                    backgroundColor: "#eb6e4b",
+                    borderColor: "rgba(99,119,115,9)",
+                  }}
                   type="Submit"
                   id="search-button"
                   value="search"

@@ -22,7 +22,7 @@ export default function WeatherData(props) {
         </div>
         <Card
           style={{
-            backgroundColor: "rgba(8,74,136,4)",
+            backgroundColor: "rgba(99,119,115,4)",
             width: 488,
           }}
         >
@@ -47,12 +47,12 @@ export default function WeatherData(props) {
                       </small>
                     </div>
                     <div className="card-text" id="humidity">
-                      <small className="text-white">
+                      <small className="text-black">
                         Humidity: {props.data.humidity}%
                       </small>
                     </div>
                     <div className="card-text" id="wind">
-                      <small className="text-white">
+                      <small className="text-black">
                         Wind: {props.data.wind} mph
                       </small>
                     </div>
