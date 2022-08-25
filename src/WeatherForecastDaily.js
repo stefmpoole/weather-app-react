@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import WeatherIcon from "./WeatherIcon";
+import "./WeatherForecastDaily.css";
 
 export default function WeatherForecastDaily(props) {
   function day() {
@@ -16,11 +17,14 @@ export default function WeatherForecastDaily(props) {
   let minTemp = Math.round(props.data.temp.min);
   return (
     <Card className="rounded" border="warning" style={{ margin: 2 }}>
-      <h5 className="card-title text-center">{day()}</h5>
-      <WeatherIcon
-        code={props.data.weather[0].icon}
-        alt={props.data.weather[0].description}
-      />
+      <h5 className="card-title text-center pb-2">{day()}</h5>
+      <div id="weather-icon">
+        <WeatherIcon
+          code={props.data.weather[0].icon}
+          alt={props.data.weather[0].description}
+          size={30}
+        />
+      </div>
       <div className="card-body">
         <div className="card-text text-center">
           <span>
