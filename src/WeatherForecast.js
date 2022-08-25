@@ -33,6 +33,7 @@ export default function WeatherForecast(props) {
             style={{
               display: "-webkit-inline-flex",
               WebkitJustifyContent: "center",
+              marginTop: 2,
             }}
           >
             {forecast.map(function (dailyForecast, index) {
