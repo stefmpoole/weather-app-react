@@ -20,13 +20,18 @@ export default function WeatherForecast(props) {
 
   if (ready) {
     return (
-      <Container className="mt-1">
+      <Container
+        className="mt-1"
+        style={{
+          display: "-webkit-inline-flex",
+          WebkitJustifyContent: "center",
+        }}
+      >
         <Row>
           <CardGroup
             id="CardGroup"
             style={{
-              display: "-webkit-inline-flex",
-              WebkitJustifyContent: "center",
+              width: 500,
             }}
           >
             {forecast.map(function (dailyForecast, index) {
