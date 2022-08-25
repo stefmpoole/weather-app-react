@@ -15,7 +15,7 @@ function App() {
           "url('https://images.pexels.com/photos/5855878/pexels-photo-5855878.jpeg?cs=srgb&dl=pexels-roman-odintsov-5855878.jpg&fm=jpg')",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
-        height: "135vh",
+        height: "150vh",
         maxwidth: 600,
       }}
     >
@@ -24,7 +24,7 @@ function App() {
         style={{
           backgroundColor: "rgba(80, 68, 45, .5)",
           padding: 40,
-          height: "135vh",
+          height: "150vh",
           maxwidth: 600,
         }}
       >

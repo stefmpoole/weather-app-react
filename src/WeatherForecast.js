@@ -28,12 +28,7 @@ export default function WeatherForecast(props) {
         }}
       >
         <Row>
-          <CardGroup
-            id="CardGroup"
-            style={{
-              width: 500,
-            }}
-          >
+          <CardGroup id="CardGroup" style={{}}>
             {forecast.map(function (dailyForecast, index) {
               if (index < 5) {
                 return (
