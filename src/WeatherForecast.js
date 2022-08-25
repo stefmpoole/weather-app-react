@@ -20,7 +20,7 @@ export default function WeatherForecast(props) {
 
   if (ready) {
     return (
-      <Container>
+      <Container className="mt-1">
         <Row>
           <CardGroup
             id="CardGroup"

@@ -5,11 +5,12 @@ import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import CurrentTemp from "./CurrentTemp";
+import "./WeatherData.css";
 
 export default function WeatherData(props) {
   return (
     <Container
-      className="mt-1"
+      className="mt-2"
       style={{
         padding: 0,
         display: "inline-flex",
@@ -22,16 +23,13 @@ export default function WeatherData(props) {
           width: 600,
         }}
       >
-        <div className="current-weather mt-0 pt-0 text-white">
-          <h2 className="text-center pt-1 pb-0" id="current">
-            Currently
-          </h2>
-          <div id="current-city">
-            <div>{props.data.city}</div>
+        <div className="current-weather mt-2 pt-0 text-white">
+          <div id="current-city">{props.data.city}</div>
+          <div id="current-time">
             <FormattedDate date={props.data.date} />
           </div>
+          <hr style={{ margin: 0 }} />
           <div className="CurrentWeather">
-            <hr className="text-white mt-2 mb-0" />
             <Row className="mt-0">
               <Col className="col-6 ml-3">
                 <div id="current-png">
@@ -44,9 +42,11 @@ export default function WeatherData(props) {
                 </div>
                 <div className="col">
                   <div className="card-body pt-0 mt-0 text-right">
-                    <div className="card-text" id="descrip">
+                    <div className="card-text">
                       <small className="text-white">
-                        {props.data.description}
+                        <div id="currently">
+                          <p>Currently: {props.data.description}</p>
+                        </div>
                       </small>
                     </div>
                     <div className="card-text" id="humidity">

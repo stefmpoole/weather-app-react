@@ -52,7 +52,7 @@ export default function Weather() {
             className="form-outline pt-1 ml-2 mr-2"
             id="location-form"
           >
-            <div className="input-group pt-2">
+            <div className="input-group">
               <input
                 type="search"
                 className="form-control rounded"

@@ -17,15 +17,4 @@
 .App h3 {
   font-size: 20px;
   text-align: center;
-  color: black;
-}
-
-.App #current-city {
-  color: #f7e129;
-  font-size: 18px;
-  text-align: center;
-}
-
-.App #current {
-  letter-spacing: 1px;
 }

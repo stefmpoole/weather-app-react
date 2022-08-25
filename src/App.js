@@ -13,7 +13,7 @@ function App() {
         className="rounded"
         style={{
           backgroundColor: "black",
-          paddingTop: 10,
+          paddingTop: 8,
           width: 600,
         }}
       >
@@ -21,7 +21,7 @@ function App() {
           id="location-card"
           style={{
             backgroundColor: "white",
-            padding: 3,
+            marginTop: 2,
           }}
         >
           <Row>
@@ -34,13 +34,12 @@ function App() {
                     "url('https://images.pexels.com/photos/1451040/pexels-photo-1451040.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
                   backgroundRepeat: "no-repeat",
                   backgroundSize: "cover",
-                  height: "12vh",
+                  height: "10vh",
                   margin: 4,
                 }}
               />
             </div>
           </Row>
-          <Row></Row>
         </Card>
         <div className="col-12">
           <h1>
