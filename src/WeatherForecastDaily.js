@@ -16,7 +16,7 @@ export default function WeatherForecastDaily(props) {
   let maxTemp = Math.round(props.data.temp.max);
   let minTemp = Math.round(props.data.temp.min);
   return (
-    <Card className="rounded" border="warning" style={{ margin: 2 }}>
+    <Card className="rounded" style={{ margin: 2.5 }} id="forecast-card">
       <h5 className="card-title text-center pb-2">{day()}</h5>
       <div id="weather-icon">
         <WeatherIcon

@@ -34,7 +34,7 @@ export default function WeatherData(props) {
             <hr className="text-white mt-2 mb-0" />
             <Row className="mt-0">
               <Col className="col-6 ml-3">
-                <div className="weather-icon" id="current-png">
+                <div id="current-png">
                   <img src={props.data.icon} alt={props.data.description} />
                 </div>
               </Col>
