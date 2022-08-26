@@ -66,7 +66,7 @@ export default function Weather() {
                   style={{
                     color: "white",
                     backgroundColor: "#915B50",
-                    borderColor: "rgba(99,119,115,9)",
+                    borderColor: "gray",
                   }}
                   type="Submit"
                   id="search-button"

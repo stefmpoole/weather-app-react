@@ -5,9 +5,9 @@ form {
 
 .degrees {
   position: relative;
-  top: -30px;
-  left: -10px;
-  letter-spacing: -8px;
+  top: -25px;
+  left: -23px;
+  letter-spacing: -10px;
 }
 
 #search-text-input {
@@ -15,8 +15,9 @@ form {
 }
 
 #current-png {
-  margin-left: 55px;
-  margin-top: 0px;
+  position: relative;
+  top: 1px;
+  right: -55px;
 }
 
 #currently {
@@ -29,6 +30,9 @@ form {
 #current-temp {
   font-size: 63px;
   font-weight: 600;
+  position: relative;
+  left: -10px;
+  top: 10px;
 }
 
 #cel {
