@@ -22,7 +22,7 @@ function App() {
       <div
         className="mask"
         style={{
-          backgroundColor: "rgba(80, 68, 45, .5)",
+          backgroundColor: "rgba(80, 68, 45, .08)",
           padding: 40,
           height: "150vh",
           maxwidth: 600,
