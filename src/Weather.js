@@ -65,8 +65,9 @@ export default function Weather() {
                 <Button
                   style={{
                     color: "white",
-                    backgroundColor: "#915B50",
-                    borderColor: "gray",
+                    backgroundColor: "#eb6e4beb",
+                    borderColor: "none",
+                    margin: 1,
                   }}
                   type="Submit"
                   id="search-button"
