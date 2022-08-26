@@ -8,7 +8,7 @@
 }
 
 .App #Container.rounded.container {
-  background-color: rgba(5, 16, 31, 0.1);
+  background-color: rgba(5, 16, 31, 0.8);
 }
 
 .App h1 {
@@ -19,5 +19,5 @@
 .App h3 {
   font-size: 20px;
   text-align: center;
-  color: #eb6f4c;
+  color: #eb6e4beb;
 }

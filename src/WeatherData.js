@@ -22,7 +22,7 @@ export default function WeatherData(props) {
         </div>
         <Card
           style={{
-            backgroundColor: "rgba(99,119,115,4)",
+            backgroundColor: "rgba(99,119,115,.8)",
             width: 488,
           }}
         >

@@ -32,7 +32,7 @@ function App() {
           <Container
             className="rounded"
             style={{
-              backgroundColor: "rgba(62,49,34,.55)",
+              backgroundColor: "rgba(62,49,34,.4)",
               padding: 8,
               width: 558,
             }}

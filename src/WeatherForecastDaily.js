@@ -20,7 +20,7 @@ export default function WeatherForecastDaily(props) {
       className="rounded text-black"
       style={{
         margin: 0.5,
-        backgroundColor: "rgba(99,119,115,4)",
+        backgroundColor: "rgba(99,119,115,.8)",
         width: "95px",
       }}
       id="forecast-card"
