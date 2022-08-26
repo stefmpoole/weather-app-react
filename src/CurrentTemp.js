@@ -58,7 +58,11 @@ export default function CurrentTemp(props) {
           <span className="text-white" id="degree-separation">
             |
           </span>
-          <Button className="btn ml-0 mr-0 pl-0 pr-0" type="button" id="cel">
+          <Button
+            className="text-black btn ml-0 mr-0 pl-0 pr-0"
+            type="button"
+            id="cel"
+          >
             °C
           </Button>
         </span>
