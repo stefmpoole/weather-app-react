@@ -66,7 +66,7 @@ export default function Weather() {
                   style={{
                     color: "white",
                     backgroundColor: "#eb6e4beb",
-                    borderColor: "none",
+                    borderColor: "white",
                     margin: 1,
                   }}
                   type="Submit"
