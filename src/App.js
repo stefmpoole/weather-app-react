@@ -12,7 +12,7 @@ function App() {
       id="img"
       style={{
         backgroundImage:
-          "url('https://images.pexels.com/photos/5855878/pexels-photo-5855878.jpeg?cs=srgb&dl=pexels-roman-odintsov-5855878.jpg&fm=jpg')",
+          "url('https://images.pexels.com/photos/12647681/pexels-photo-12647681.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         height: "150vh",
@@ -32,7 +32,7 @@ function App() {
           <Container
             className="rounded"
             style={{
-              backgroundColor: "rgba(62,49,34,.9)",
+              backgroundColor: "rgba(62,49,34,.55)",
               padding: 8,
               width: 558,
             }}
