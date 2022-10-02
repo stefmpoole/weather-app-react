@@ -12,7 +12,7 @@ function App() {
       id="img"
       style={{
         backgroundImage:
-          "url('https://images.pexels.com/photos/12647681/pexels-photo-12647681.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
+          "url('https://images.pexels.com/photos/243971/pexels-photo-243971.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         height: "150vh",
